@@ -15,10 +15,10 @@ class View:
         #The idea is to initialize the view with a controller for further interactions.
         self.controller = controller
 
-    def ask_url(self) -> None:
+    def ask_url(self) -> str:
         url = input("Enter the URL : ")
-        print(url)
+        return url
 
-    def ask_destination_folder(self) -> None:
+    def ask_destination_folder(self) -> str:
         destinationFolder = input("Enter the destination folder : ")
-        print(destinationFolder)
+        return destinationFolder
