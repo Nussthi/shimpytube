@@ -1,0 +1,29 @@
+<View>
+
+    youtubeURL: youtubeURL
+    destinationFolder: destinationFolder
+
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Youtube URL"
+
+            TextInput:
+                id: youtubeURL
+                multiline: False
+
+            Label:
+                text: "Destination Folder"
+
+            TextInput:
+                id: destinationFolder
+                multiline: False
+
+        Button:
+            text: "Download"
+            on_press: root.download_music()

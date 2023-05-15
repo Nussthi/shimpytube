@@ -1,5 +1,5 @@
 import pytube
-from views.view import View
+from views.view import Shrimpytube
 from models.userpreferences import UserPreferences
 
 class Controller:
@@ -13,13 +13,11 @@ class Controller:
         __init__
     '''
     def __init__(self) -> None:
-        self.view = View(self)
+        self.view = Shrimpytube(self)
         self.userPreferences = UserPreferences()
 
-    def downloadMusic(self):
-        videoURL = self.view.ask_url()
-        destinationFolder = self.view.ask_destination_folder()
-        yt = pytube.YouTube(videoURL,use_oauth=True,allow_oauth_cache=True)
+    def download_music(self, youtubeURL, destinationFolder):
+        yt = pytube.YouTube(youtubeURL,use_oauth=True,allow_oauth_cache=True)
 
         streams = yt.streams.filter(only_audio=True)
         stream = streams[0]
