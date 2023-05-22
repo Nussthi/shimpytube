@@ -2,6 +2,7 @@
 
     youtubeURL: youtubeURL
     destinationFolder: destinationFolder
+    errorMessage: errorMessage
 
     GridLayout:
         cols: 1
@@ -24,6 +25,14 @@
                 id: destinationFolder
                 multiline: False
 
+        Label:
+            id: errorMessage
+            text: ""
+            color: 1,0,0,1
+
         Button:
             text: "Download"
-            on_press: root.download_music()
+            on_press: root.download()
+        Button:
+            text: "Save folder path"
+            on_press: root.save_destination_folder()

@@ -4,4 +4,4 @@ if __name__ == "__main__":
 
     controller = Controller()
 
-    controller.view.run()
+    controller.app.run()
